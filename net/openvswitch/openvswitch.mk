@@ -22,7 +22,7 @@ define OvsPackageTemplate
      URL:=https://www.openvswitch.org
      TITLE:=$(ovs_$(1)_title)
      HIDDEN:=$(ovs_$(1)_hidden)
-     DEPENDS:=$(ovs_$(1)_depends) $(ovs__common_depends)
+     DEPENDS:=$(ovs_$(1)_depends) $(call ovs__common_depends,$(1))
   endef
 
   define Package/$(call ovs_package_name,$(1))/install
